@@ -41,11 +41,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Find dependencies
 find_package(Threads REQUIRED)
 
-#target_compile_definitions()
+#
+# Common .cpp and .h files for all projects
+#
 
 include_directories(template common)
 
-# Add these as interface files. Because of DOUBLEVEC_T these may differ from project to project.
 set(COMMON_CPPFILES
         common/blockmem.cpp
         common/bspfile.cpp
