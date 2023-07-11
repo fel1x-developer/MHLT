@@ -4,7 +4,7 @@
 
 #if 0 // linux fix --vluzacn
 // AJM GNU
-#ifdef __GNUC__ 
+#ifdef __GNUC__
 #define __int64 long long
 #endif
 #endif
@@ -30,17 +30,17 @@
 #undef UINT32
 #undef INT64
 #undef UINT64
-typedef char             CHAR;
-typedef unsigned char    BYTE;
-typedef signed int       INT;
-typedef unsigned int     UINT;
-typedef signed char      INT8;
-typedef unsigned char    UINT8;
-typedef signed short     INT16;
-typedef unsigned short   UINT16;
-typedef signed int       INT32;
-typedef unsigned int     UINT32;
-typedef signed __int64   INT64;
+typedef char CHAR;
+typedef unsigned char BYTE;
+typedef signed int INT;
+typedef unsigned int UINT;
+typedef signed char INT8;
+typedef unsigned char UINT8;
+typedef signed short INT16;
+typedef unsigned short UINT16;
+typedef signed int INT32;
+typedef unsigned int UINT32;
+typedef signed __int64 INT64;
 typedef unsigned __int64 UINT64;
 
 #endif /* SYSTEM_WIN32 */
@@ -59,16 +59,16 @@ typedef unsigned __int64 UINT64;
 #undef UINT32
 #undef INT64
 #undef UINT64
-typedef char            CHAR;
-typedef unsigned char   BYTE;
-typedef signed int      INT;
-typedef unsigned int    UINT;
-typedef signed char     INT8;
-typedef unsigned char   UINT8;
-typedef signed short    INT16;
-typedef unsigned short  UINT16;
-typedef signed int      INT32;
-typedef unsigned int    UINT32;
+typedef char CHAR;
+typedef unsigned char BYTE;
+typedef signed int INT;
+typedef unsigned int UINT;
+typedef signed char INT8;
+typedef unsigned char UINT8;
+typedef signed short INT16;
+typedef unsigned short UINT16;
+typedef signed int INT32;
+typedef unsigned int UINT32;
 /* typedef __int64       INT64; */
 /* typedef unsigned __int64 UINT64; */
 

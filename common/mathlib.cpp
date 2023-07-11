@@ -6,4 +6,4 @@
 #include "mathlib.h"
 #include "win32fix.h"
 
-const vec3_t    vec3_origin = { 0, 0, 0 };
+const vec3_t vec3_origin = {0, 0, 0};

@@ -28,4 +28,3 @@
 #define DEFAULT_DELETEEMBEDDEDLIGHTMAPS false
 #endif
 #endif
-

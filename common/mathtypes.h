@@ -13,6 +13,6 @@ typedef double vec_t;
 #else
 typedef float vec_t;
 #endif
-typedef vec_t   vec3_t[3];                                 // x,y,z
+typedef vec_t vec3_t[3]; // x,y,z
 
-#endif //MATHTYPES_H__
+#endif // MATHTYPES_H__

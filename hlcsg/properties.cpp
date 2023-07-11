@@ -1,4 +1,4 @@
-//KGP -- added in for use with HLCSG_NULLIFY_INVISIBLE
+// KGP -- added in for use with HLCSG_NULLIFY_INVISIBLE
 
 #include "csg.h"
 
@@ -7,38 +7,42 @@
 #include <istream>
 using namespace std;
 
-set< string > g_invisible_items;
+set<string> g_invisible_items;
 
 void properties_initialize(const char* filename)
 {
-    if (filename == NULL)
-    { return; }
+	if (filename == NULL)
+	{
+		return;
+	}
 
-    if (q_exists(filename))
-    { Log("Loading null entity list from '%s'\n", filename); }
-    else
-    {
+	if (q_exists(filename))
+	{
+		Log("Loading null entity list from '%s'\n", filename);
+	}
+	else
+	{
 		Error("Could not find null entity list file '%s'\n", filename);
-        return;
-    }
+		return;
+	}
 
-	ifstream file(filename,ios::in);
-	if(!file)
-	{ 
+	ifstream file(filename, ios::in);
+	if (!file)
+	{
 		file.close();
-		return; 
+		return;
 	}
 
 
-	//begin reading list of items
-	char line[MAX_VAL]; //MAX_VALUE //vluzacn
-	memset(line,0,sizeof(char)*4096);
-	while(!file.eof())
+	// begin reading list of items
+	char line[MAX_VAL]; // MAX_VALUE //vluzacn
+	memset(line, 0, sizeof(char) * 4096);
+	while (!file.eof())
 	{
 		string str;
-		getline(file,str);
+		getline(file, str);
 		{ //--vluzacn
-			char *s = strdup (str.c_str ());
+			char* s = strdup(str.c_str());
 			int i;
 			for (i = 0; s[i] != '\0'; i++)
 			{
@@ -47,11 +51,13 @@ void properties_initialize(const char* filename)
 					s[i] = '\0';
 				}
 			}
-			str.assign (s);
-			free (s);
+			str.assign(s);
+			free(s);
 		}
-		if(str.size() < 1)
-		{ continue; }
+		if (str.size() < 1)
+		{
+			continue;
+		}
 		g_invisible_items.insert(str);
 	}
 	file.close();
