@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32505.173
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hlbsp", "hlbsp\hlbsp.vcxproj", "{E75CEB5E-EBAE-1E7D-A626-81604E140A5F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hlcsg", "hlcsg\hlcsg.vcxproj", "{505681C2-3E57-300B-D330-46DD50C147D2}"
