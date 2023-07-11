@@ -29,13 +29,6 @@
 #     warning: converting to ‘int’ from ‘vec_t’
 #
 
-
-
-
-
-
-
-
 #
 # Common .cpp and .h files for all projects
 #
@@ -58,7 +51,6 @@ COMMON_INCLUDEDIRS = \
 			common \
 
 COMMON_INCLUDEFILES = \
-			template/basictypes.h \
 			common/blockmem.h \
 			common/boundingbox.h \
 			common/bspfile.h \
@@ -87,7 +79,7 @@ COMMON_DEFINITIONS = \
 			HAVE_SYS_TIME_H \
 			HAVE_UNISTD_H \
 
-COMMON_FLAGS = -Wall -O2 -fno-strict-aliasing -pthread -pipe
+COMMON_FLAGS = -Wall -O2 -fno-strict-aliasing -pthread -pipe -std=c++20
 
 #
 # Specific .cpp and .h files for hlcsg, hlbsp, hlvis, hlrad and ripent
