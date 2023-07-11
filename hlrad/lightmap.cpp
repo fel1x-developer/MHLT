@@ -3723,11 +3723,8 @@ void DeleteDirectLights()
 //  GatherSampleLight
 // =====================================================================================
 #ifndef HLRAD_SOFTSKY
-#define NUMVERTEXNORMALS 162
-double r_avertexnormals[NUMVERTEXNORMALS][3] = {
 // #include "../common/anorms.h"
 #include "anorms.h" //--vluzacn
-};
 #endif
 #ifdef HLRAD_SOFTSKY
 int g_numskynormals[SKYLEVELMAX + 1];
