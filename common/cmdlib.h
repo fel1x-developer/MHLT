@@ -16,7 +16,7 @@
 #if !defined(HLCSG) && !defined(HLBSP) && !defined(HLVIS) && !defined(HLRAD) && !defined(RIPENT) //--vluzacn
 #error "You must define one of these in the settings of each project: HLCSG, HLBSP, HLVIS, HLRAD, RIPENT. The most likely cause is that you didn't load the project from the sln file."
 #endif
-#if !defined(VERSION_32BIT) && !defined(VERSION_64BIT) && !defined(VERSION_LINUX) && !defined(VERSION_OTHER) //--vluzacn
+#if !defined(VERSION_32BIT) && !defined(VERSION_64BIT) && !defined(VERSION_POSIX) && !defined(VERSION_OTHER) //--vluzacn
 #error "You must define one of these in the settings of each project: VERSION_32BIT, VERSION_64BIT, VERSION_LINUX, VERSION_OTHER. The most likely cause is that you didn't load the project from the sln file."
 #endif
 
@@ -28,8 +28,8 @@
 #define PLATFORM_VERSIONSTRING "64-bit"
 #define PLATFORM_CAN_CALC_EXTENT
 #endif
-#ifdef VERSION_LINUX
-#define PLATFORM_VERSIONSTRING "linux"
+#ifdef VERSION_POSIX
+#define PLATFORM_VERSIONSTRING "POSIX"
 #define PLATFORM_CAN_CALC_EXTENT
 #endif
 #ifdef VERSION_OTHER

@@ -76,17 +76,19 @@ set(COMMON_INCLUDEFILES
         common/win32fix.h
         common/winding.h)
 
-add_compile_definitions(
-        VERSION_LINUX
-        SYSTEM_POSIX
-        NDEBUG
-        STDC_HEADERS
-        HAVE_FCNTL_H
-        HAVE_PTHREAD_H
-        HAVE_SYS_RESOURCE_H
-        HAVE_SYS_STAT_H
-        HAVE_SYS_TIME_H
-        HAVE_UNISTD_H)
+if (UNIX)
+    add_compile_definitions(
+            VERSION_POSIX
+            SYSTEM_POSIX
+            NDEBUG
+            STDC_HEADERS
+            HAVE_FCNTL_H
+            HAVE_PTHREAD_H
+            HAVE_SYS_RESOURCE_H
+            HAVE_SYS_STAT_H
+            HAVE_SYS_TIME_H
+            HAVE_UNISTD_H)
+endif (UNIX)
 
 set(CMAKE_CXX_FLAGS "-Wall -O2 -fno-strict-aliasing -pipe")
 
