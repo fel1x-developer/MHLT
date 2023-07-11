@@ -142,12 +142,15 @@
       <SuppressStartupBanner>true</SuppressStartupBanner>
       <SubSystem>Console</SubSystem>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
-      <OutputFile>$(SolutionDir)\tools\hlvis.exe</OutputFile>
+      <OutputFile>$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName).exe</OutputFile>
       <AdditionalDependencies>binmode.obj;%(AdditionalDependencies)</AdditionalDependencies>
       <StackReserveSize>4194304</StackReserveSize>
       <StackCommitSize>1048576</StackCommitSize>
       <EnableUAC>false</EnableUAC>
     </Link>
+    <PostBuildEvent>
+      <Command>copy /Y "$(SolutionDir)$(Platform)\$(Configuration)\$(ProjectName).exe" "$(SolutionDir)\tools\$(ProjectName).exe"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\common\blockmem.cpp" />
