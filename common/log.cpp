@@ -40,7 +40,7 @@
 #include "scriplib.h"
 #endif
 
-char*           g_Program = "Uninitialized variable ::g_Program";
+const char*     g_Program = "Uninitialized variable ::g_Program";
 char            g_Mapname[_MAX_PATH] = "Uninitialized variable ::g_Mapname";
 
 developer_level_t g_developer = DEFAULT_DEVELOPER;

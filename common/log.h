@@ -25,7 +25,7 @@ developer_level_t;
 // log.c globals
 //
 
-extern char*    g_Program;
+extern const char*    g_Program;
 extern char     g_Mapname[_MAX_PATH];
 
 #define DEFAULT_DEVELOPER   DEVELOPER_LEVEL_ALWAYS

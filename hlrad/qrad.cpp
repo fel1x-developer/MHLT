@@ -4345,7 +4345,7 @@ static void     Usage()
 // =====================================================================================
 static void     Settings()
 {
-    char*           tmp;
+    const char*           tmp;
     char            buf1[1024];
     char            buf2[1024];
 

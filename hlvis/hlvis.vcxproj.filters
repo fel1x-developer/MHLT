@@ -62,9 +62,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Program Files\Microsoft Visual Studio\VC98\Include\BASETSD.H">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\template\basictypes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
