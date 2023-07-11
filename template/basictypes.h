@@ -2,19 +2,14 @@
 // This file is licensed under the terms of the Lesser GNU Public License
 // (see LPGL.txt, or http://www.gnu.org/copyleft/lesser.txt)
 
+#pragma once
+
 #if 0 // linux fix --vluzacn
 // AJM GNU
 #ifdef __GNUC__
 #define __int64 long long
 #endif
 #endif
-
-#ifndef BASICTYPES_H__
-#define BASICTYPES_H__
-
-#if _MSC_VER > 1000
-#pragma once
-#endif /* _MSC_VER > 1000 */
 
 #if defined(_WIN32) || defined(SYSTEM_WIN32)
 
@@ -73,5 +68,3 @@ typedef unsigned int UINT32;
 /* typedef unsigned __int64 UINT64; */
 
 #endif /* SYSTEM_POSIX */
-
-#endif /* BASICTYPES_H__ */

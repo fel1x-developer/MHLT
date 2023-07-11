@@ -1,10 +1,5 @@
-#ifndef LOG_H__
-#define LOG_H__
-#include "cmdlib.h" //--vluzacn
-
-#if _MSC_VER >= 1000
 #pragma once
-#endif
+#include "cmdlib.h" //--vluzacn
 
 #include "mathtypes.h"
 #include "messages.h"
@@ -84,5 +79,3 @@ extern void LogTimeElapsed(float elapsed_time);
 
 // Should be in hlassert.h, but well so what
 extern void hlassume(bool exp, assume_msgs msgid);
-
-#endif // Should be in hlassert.h, but well so what LOG_H__

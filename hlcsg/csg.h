@@ -1,9 +1,4 @@
-#ifndef HLCSG_H__
-#define HLCSG_H__
-
-#if _MSC_VER >= 1000
 #pragma once
-#endif
 
 #pragma warning(disable : 4786) // identifier was truncated to '255' characters in the browser information
 #include <deque>
@@ -481,6 +476,3 @@ extern void autowad_PushName(const char* texname);
 extern void properties_initialize(const char* filename);
 extern std::set<std::string> g_invisible_items;
 #endif
-
-//============================================================================
-#endif // HLCSG_H__

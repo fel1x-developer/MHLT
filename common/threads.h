@@ -1,10 +1,5 @@
-#ifndef THREADS_H__
-#define THREADS_H__
-#include "cmdlib.h" //--vluzacn
-
-#if _MSC_VER >= 1000
 #pragma once
-#endif
+#include "cmdlib.h" //--vluzacn
 
 #define MAX_THREADS 64
 
@@ -66,5 +61,3 @@ extern void threads_UninitCrit();
 		RunThreadsOnIndividual(n, p, f);     \
 	}
 #endif
-
-#endif //**/ THREADS_H__

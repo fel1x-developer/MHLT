@@ -1,9 +1,4 @@
-#ifndef CMDLIB_H__
-#define CMDLIB_H__
-
-#if _MSC_VER >= 1000
 #pragma once
-#endif
 
 // #define MODIFICATIONS_STRING "Submit detailed bug reports to (zoner@gearboxsoftware.com)\n"
 // #define MODIFICATIONS_STRING "Submit detailed bug reports to (merlinis@bigpond.net.au)\n"
@@ -707,5 +702,3 @@ extern int BigLong(int l);
 extern int LittleLong(int l);
 extern float BigFloat(float l);
 extern float LittleFloat(float l);
-
-#endif // CMDLIB_H__

@@ -1,10 +1,5 @@
-#ifndef HLASSERT_H__
-#define HLASSERT_H__
-#include "cmdlib.h" //--vluzacn
-
-#if _MSC_VER >= 1000
 #pragma once
-#endif
+#include "cmdlib.h" //--vluzacn
 
 #ifdef SYSTEM_WIN32
 #ifdef _DEBUG
@@ -63,5 +58,3 @@
 
 #endif // _DEBUG
 #endif // SYSTEM_POSIX
-
-#endif // SYSTEM_POSIX HLASSERT_H__

@@ -1,5 +1,5 @@
-#ifndef FILELIB_H__
-#define FILELIB_H__
+#pragma once
+
 #include "cmdlib.h" //--vluzacn
 
 #if _MSC_VER >= 1000
@@ -19,5 +19,3 @@ extern void SafeWrite(FILE* f, const void* const buffer, int count);
 
 extern int LoadFile(const char* const filename, char** bufferptr);
 extern void SaveFile(const char* const filename, const void* const buffer, int count);
-
-#endif //**/ FILELIB_H__

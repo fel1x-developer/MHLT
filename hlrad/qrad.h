@@ -1,9 +1,4 @@
-#ifndef HLRAD_H__
-#define HLRAD_H__
-
-#if _MSC_VER >= 1000
 #pragma once
-#endif
 
 #include "cmdlib.h"
 #include "messages.h"
@@ -1150,5 +1145,3 @@ extern vec_t CalcSightArea_SpotLight(const vec3_t receiver_origin, const vec3_t 
 #ifdef HLRAD_ACCURATEBOUNCE_ALTERNATEORIGIN
 extern void GetAlternateOrigin(const vec3_t pos, const vec3_t normal, const patch_t* patch, vec3_t& origin);
 #endif
-
-#endif // HLRAD_H__

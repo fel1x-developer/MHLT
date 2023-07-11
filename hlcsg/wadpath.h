@@ -1,6 +1,5 @@
-// AJM: added file in
-#ifndef WADPATH_H__
-#define WADPATH_H__
+#pragma once
+
 #include "cmdlib.h" //--vluzacn
 
 #define MAX_WADPATHS 128 // arbitrary
@@ -26,5 +25,3 @@ extern bool IsListedWadPath(const char* const path);
 #endif
 extern void FreeWadPaths();
 extern void GetUsedWads();
-
-#endif // WADPATH_H__

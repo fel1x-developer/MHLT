@@ -1,3 +1,5 @@
+#pragma once
+
 #include "cmdlib.h"
 #include "messages.h"
 #include "win32fix.h"

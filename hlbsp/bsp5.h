@@ -1,9 +1,4 @@
-#ifndef HLBSP_H__
-#define HLBSP_H__
-
-#if _MSC_VER >= 1000
 #pragma once
-#endif
 
 #include "cmdlib.h"
 #include "messages.h"
@@ -388,5 +383,3 @@ extern bool g_nohull2;
 
 extern face_t* NewFaceFromFace(const face_t* const in);
 extern void SplitFace(face_t* in, const dplane_t* const split, face_t** front, face_t** back);
-
-#endif // qbsp.c====================================================================== HLBSP_H__
