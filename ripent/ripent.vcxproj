@@ -126,6 +126,8 @@
       <ProgramDataBaseFileName>.\Release_x64\</ProgramDataBaseFileName>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <WholeProgramOptimization>true</WholeProgramOptimization>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Midl>
       <TypeLibraryName>.\Release_x64\ripent.tlb</TypeLibraryName>
