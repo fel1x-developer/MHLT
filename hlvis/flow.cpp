@@ -1183,7 +1183,7 @@ void BasePortalVis(int unused)
 		memset(portalsee, 0, portalsize);
 
 #if ZHLT_ZONES
-		UINT32 zone = p->zone;
+		uint32_t zone = p->zone;
 #endif
 
 		for (j = 0, tp = g_portals; j < portalsize; j++, tp++)

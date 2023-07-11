@@ -2,7 +2,6 @@
 
 #include "cmdlib.h" //--vluzacn
 
-#include "basictypes.h"
 #include "mathtypes.h"
 #include "win32fix.h"
 #include "mathlib.h"
@@ -101,16 +100,16 @@ public:
 	);
 	void CopyPoints(vec3_t* points, int& numpoints);
 
-	void initFromPoints(vec3_t* points, UINT32 numpoints);
+	void initFromPoints(vec3_t* points, uint32_t numpoints);
 	void Reset(void); // Resets the structure
 
 protected:
-	void resize(UINT32 newsize);
+	void resize(uint32_t newsize);
 
 public:
 	// Construction
 	Winding();								   // Do nothing :)
-	Winding(vec3_t* points, UINT32 numpoints); // Create from raw points
+	Winding(vec3_t* points, uint32_t numpoints); // Create from raw points
 	Winding(const dface_t& face
 #ifdef ZHLT_WINDING_EPSILON
 		,
@@ -119,7 +118,7 @@ public:
 	);
 	Winding(const dplane_t& face);
 	Winding(const vec3_t normal, const vec_t dist);
-	Winding(UINT32 points);
+	Winding(uint32_t points);
 	Winding(const Winding& other);
 	virtual ~Winding();
 	Winding& operator=(const Winding& other);
@@ -130,9 +129,9 @@ private:
 
 public:
 	// Data
-	UINT32 m_NumPoints;
+	uint32_t m_NumPoints;
 	vec3_t* m_Points;
 
 protected:
-	UINT32 m_MaxPoints;
+	uint32_t m_MaxPoints;
 };

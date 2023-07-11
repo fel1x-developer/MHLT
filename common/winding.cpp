@@ -31,7 +31,7 @@
 
 void Winding::Print() const
 {
-	UINT32 x;
+	uint32_t x;
 
 	for (x = 0; x < m_NumPoints; x++)
 	{
@@ -256,7 +256,7 @@ Winding::Winding()
 	m_NumPoints = m_MaxPoints = 0;
 }
 
-Winding::Winding(vec3_t* points, UINT32 numpoints)
+Winding::Winding(vec3_t* points, uint32_t numpoints)
 {
 	hlassert(numpoints >= 3);
 	m_NumPoints = numpoints;
@@ -266,7 +266,7 @@ Winding::Winding(vec3_t* points, UINT32 numpoints)
 	memcpy(m_Points, points, sizeof(vec3_t) * m_NumPoints);
 }
 
-void Winding::initFromPoints(vec3_t* points, UINT32 numpoints)
+void Winding::initFromPoints(vec3_t* points, uint32_t numpoints)
 {
 	hlassert(numpoints >= 3);
 
@@ -291,7 +291,7 @@ Winding& Winding::operator=(const Winding& other)
 }
 
 
-Winding::Winding(UINT32 numpoints)
+Winding::Winding(uint32_t numpoints)
 {
 	hlassert(numpoints >= 3);
 	m_NumPoints = numpoints;
@@ -1279,7 +1279,7 @@ void Winding::insertPoint(const vec3_t newpoint, const unsigned int offset)
 }
 
 
-void Winding::resize(UINT32 newsize)
+void Winding::resize(uint32_t newsize)
 {
 	newsize = (newsize + 3) & ~3; // groups of 4
 

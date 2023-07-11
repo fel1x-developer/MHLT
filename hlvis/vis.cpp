@@ -1319,22 +1319,22 @@ static void AssignPortalsToZones()
 {
 	hlassert(g_Zones != NULL);
 
-	UINT32 count = 0;
+	uint32_t count = 0;
 
 	portal_t* p;
-	UINT32 x;
+	uint32_t x;
 
-	UINT32 tmp[20];
+	uint32_t tmp[20];
 	memset(tmp, 0, sizeof(tmp));
 
-	UINT32 numportals = g_numportals * 2;
+	uint32_t numportals = g_numportals * 2;
 	for (x = 0, p = g_portals; x < numportals; x++, p++)
 	{
 		BoundingBox bounds;
 		winding_t* w = p->winding;
-		UINT32 numpoints = w->numpoints;
+		uint32_t numpoints = w->numpoints;
 
-		UINT32 y;
+		uint32_t y;
 
 		for (y = 0; y < numpoints; y++)
 		{

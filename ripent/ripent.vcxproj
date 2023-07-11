@@ -171,7 +171,6 @@
     <ClCompile Include="ripent.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\template\basictypes.h" />
     <ClInclude Include="..\common\blockmem.h" />
     <ClInclude Include="..\common\boundingbox.h" />
     <ClInclude Include="..\common\bspfile.h" />
