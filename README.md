@@ -10,8 +10,8 @@ MHLT is based on Vluzacn's ZHLT v34 (2015/8/17), Vluzacn's (email: vluzacn@163.c
   The main benefit of the 64-bit version is no memory allocation failures, because the 64-bit tools have access to more than 2GB of system memory.
 
 2. Open Hammer's configuration dialog.
-  Add 'zhlt.wad' into your wad list.
-  Add 'zhlt.fgd' into your fgd list.
+  Add 'mhlt.wad' into your wad list.
+  Add 'mhlt.fgd' into your fgd list.
 
 3. You may also be interested in the these tools (which are well supported by this compiler):
 - Larger grid patch for Hammer
