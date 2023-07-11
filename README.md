@@ -1,4 +1,8 @@
----- How to install ----
+# Modern Half Life Tools (MHLT)
+## About
+MHLT is based on Vluzacn's ZHLT v34 (2015/8/17), Vluzacn's (email: vluzacn@163.com) 34th custom build of ZHLT 3.4 (http://zhlt.info/)
+
+## How to install 
 
 1. Open Hammer or Batch Compiler's configuration dialog.
   Set CSG, BSP, VIS, RAD tool pathes to the 'hlcsg.exe', 'hlbsp.exe', 'hlvis.exe', 'hlrad.exe' in 'tools' folder.
@@ -15,17 +19,7 @@
 - Floating point coordinates output patch for Hammer
     http://forums.svencoop.com/showthread.php?t=39037
 
-
----- About ----
-
-Vluzacn's ZHLT v34 (2015/8/17)
-This is Vluzacn's (email: vluzacn@163.com) 34th custom build of ZHLT 3.4 (http://zhlt.info/)
-More information are available at  http://forums.svencoop.com/showthread.php?t=38059
-
-
-
-
-I. GENERAL TECHNICAL ISSUES
+## GENERAL TECHNICAL ISSUES
 
 There are allot of "warnings" when you do compile, but these should be ignored - as fixing them causes compile errors, such as hull holes, and invisible walls - along with bad lighting, and slower complies.
 
