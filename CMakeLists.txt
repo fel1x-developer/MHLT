@@ -32,6 +32,9 @@ project(ModernHalfLifeTools
         DESCRIPTION "Modern Half Life Tools"
         LANGUAGES CXX)
 
+set(CMAKE_C_COMPILER cc)
+set(CMAKE_CPP_COMPILER c++)
+
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
