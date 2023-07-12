@@ -143,7 +143,7 @@ target_link_libraries(hlbsp Threads::Threads)
 
 add_custom_command(TARGET hlbsp
         POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:hlbsp> ${CMAKE_SOURCE_DIR}/bin/)
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:hlbsp> ${CMAKE_SOURCE_DIR}/tools/)
 
 #
 # hlcsg
@@ -175,7 +175,7 @@ target_link_libraries(hlcsg Threads::Threads)
 
 add_custom_command(TARGET hlcsg
         POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:hlcsg> ${CMAKE_SOURCE_DIR}/bin/)
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:hlcsg> ${CMAKE_SOURCE_DIR}/tools/)
 
 #
 # hlrad
@@ -209,7 +209,7 @@ target_link_libraries(hlrad Threads::Threads)
 
 add_custom_command(TARGET hlrad
         POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:hlrad> ${CMAKE_SOURCE_DIR}/bin/)
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:hlrad> ${CMAKE_SOURCE_DIR}/tools/)
 
 #
 # hlvis
@@ -232,7 +232,7 @@ target_link_libraries(hlvis Threads::Threads)
 
 add_custom_command(TARGET hlvis
         POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:hlvis> ${CMAKE_SOURCE_DIR}/bin/)
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:hlvis> ${CMAKE_SOURCE_DIR}/tools/)
 
 #
 # ripent
@@ -253,4 +253,4 @@ target_link_libraries(ripent Threads::Threads)
 
 add_custom_command(TARGET ripent
         POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:ripent> ${CMAKE_SOURCE_DIR}/bin/)
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:ripent> ${CMAKE_SOURCE_DIR}/tools/)
