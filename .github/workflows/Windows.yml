@@ -20,8 +20,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Add MSBuild to PATH
-      uses: microsoft/setup-msbuild@v1.0.2
+    - name: Add "cl.exe"
+      uses: ilammy/msvc-dev-cmd@v1
+      with:
+        arch: amd64
+        vsversion: 2022
     
     - name: Install Ninja
       run: pip install ninja
