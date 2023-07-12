@@ -2,10 +2,9 @@
 
 #include "cmdlib.h" //--vluzacn
 
-#include <cstdlib>
-
 /////////////////////////////
 #ifdef SYSTEM_WIN32
+#include <malloc.h>
 
 #define alloca _alloca
 
@@ -33,6 +32,8 @@
 #endif
 
 #ifdef SYSTEM_POSIX
+#include <cstdlib>
+
 #define _MAX_PATH 4096
 #define _MAX_DRIVE 4096
 #define _MAX_DIR 4096

@@ -32,8 +32,10 @@ project(ModernHalfLifeTools
         DESCRIPTION "Modern Half Life Tools"
         LANGUAGES CXX)
 
-set(CMAKE_C_COMPILER cc)
-set(CMAKE_CPP_COMPILER c++)
+if (UNIX)
+    set(CMAKE_C_COMPILER cc)
+    set(CMAKE_CPP_COMPILER c++)
+endif (UNIX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -91,7 +93,24 @@ if (UNIX)
             HAVE_UNISTD_H)
 endif (UNIX)
 
-set(CMAKE_CXX_FLAGS "-Wall -O2 -fno-strict-aliasing -pipe")
+if (MSVC)
+    add_compile_definitions(
+            VERSION_WINDOWS
+            NDEBUG
+            WIN32
+            _CONSOLE
+            SYSTEM_WIN32
+            STDC_HEADERS)
+endif (MSVC)
+
+if (UNIX)
+    set(CMAKE_CXX_FLAGS "-Wall -O2 -fno-strict-aliasing -pipe")
+endif (UNIX)
+
+if (MSVC)
+    set(CMAKE_CXX_FLAGS "/GS /GL /W3 /Gy /Zc:wchar_t /Zi /Gm- /O2 /Zc:inline /fp:precise /GF /WX- /Zc:forScope /Gd /Oi /MT /FC /EHsc /nologo")
+    add_link_options("-LTCG -SUBSYSTEM:CONSOLE -NOLOGO")
+endif (MSVC)
 
 #
 # Specific .cpp and .h files for hlcsg, hlbsp, hlvis, hlrad and ripent
@@ -124,7 +143,7 @@ target_link_libraries(hlbsp Threads::Threads)
 
 add_custom_command(TARGET hlbsp
         POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:hlbsp> ${CMAKE_SOURCE_DIR}/bin/hlbsp)
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:hlbsp> ${CMAKE_SOURCE_DIR}/bin/)
 
 #
 # hlcsg
@@ -156,7 +175,7 @@ target_link_libraries(hlcsg Threads::Threads)
 
 add_custom_command(TARGET hlcsg
         POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:hlcsg> ${CMAKE_SOURCE_DIR}/bin/hlcsg)
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:hlcsg> ${CMAKE_SOURCE_DIR}/bin/)
 
 #
 # hlrad
@@ -190,7 +209,7 @@ target_link_libraries(hlrad Threads::Threads)
 
 add_custom_command(TARGET hlrad
         POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:hlrad> ${CMAKE_SOURCE_DIR}/bin/hlrad)
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:hlrad> ${CMAKE_SOURCE_DIR}/bin/)
 
 #
 # hlvis
@@ -213,7 +232,7 @@ target_link_libraries(hlvis Threads::Threads)
 
 add_custom_command(TARGET hlvis
         POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:hlvis> ${CMAKE_SOURCE_DIR}/bin/hlvis)
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:hlvis> ${CMAKE_SOURCE_DIR}/bin/)
 
 #
 # ripent
@@ -234,4 +253,4 @@ target_link_libraries(ripent Threads::Threads)
 
 add_custom_command(TARGET ripent
         POST_BUILD
-        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:ripent> ${CMAKE_SOURCE_DIR}/bin/ripent)
+        COMMAND ${CMAKE_COMMAND} -E copy $<TARGET_FILE:ripent> ${CMAKE_SOURCE_DIR}/bin/)

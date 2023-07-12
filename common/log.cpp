@@ -662,14 +662,7 @@ static void LogArgs(int argc, char** argv)
 // =====================================================================================
 void Banner()
 {
-	Log("%s " ZHLT_VERSIONSTRING " " HACK_VERSIONSTRING
-#ifdef ZHLT_64BIT_FIX
-#ifndef VERSION_32BIT
-		" " PLATFORM_VERSIONSTRING
-#endif
-#endif
-		" (%s)\n",
-		g_Program, __DATE__);
+	Log("%s " ZHLT_VERSIONSTRING " " HACK_VERSIONSTRING " (%s)\n", g_Program, __DATE__);
 	// Log("BUGGY %s (built: %s)\nUse at own risk.\n", g_Program, __DATE__);
 #ifdef ZHLT_XASH2
 	Log(" - special edition for Xash with change in bsp format\n");
