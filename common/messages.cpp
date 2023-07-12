@@ -13,8 +13,7 @@ const char* const maperror = "The map has a problem which must be fixed";
 const char* const selfexplanitory = "self explanitory";
 const char* const reference = "Check the file http://www.zhlt.info/common-mapping-problems.html for a detailed explanation of this problem";
 const char* const simplify = "The map is too complex for the game engine/compile tools to handle.  Simplify";
-const char* const contactmerl = "contact amckern@yahoo.com concerning this issue.";
-const char* const contactvluzacn = "contact vluzacn@163.com concerning this issue.";
+const char* const contactvluzacn = "Report issues on https://github.com/fel1x-developer/MHLT/issues";
 
 static const MessageTable_t assumes[assume_last] = {
 	{"invalid assume message", "This is a message should never be printed.", contact},
