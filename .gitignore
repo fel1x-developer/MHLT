@@ -1,5 +1,10 @@
 # Output files
 tools/*.exe
+tools/hlbsp
+tools/hlcsg
+tools/hlrad
+tools/hlvis
+tools/ripent
 
 # CMake gitignore
 CMakeLists.txt.user
