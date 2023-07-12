@@ -6,7 +6,6 @@ MHLT is based on Vluzacn's ZHLT v34 (2015/8/17), Vluzacn's (email: vluzacn@163.c
 
 1. Open Hammer or Batch Compiler's configuration dialog.
   Set CSG, BSP, VIS, RAD tool pathes to the 'hlcsg.exe', 'hlbsp.exe', 'hlvis.exe', 'hlrad.exe' in 'tools' folder.
-  If you are running 64-bit Windows, use the 'hlcsg_x64.exe', 'hlbsp_x64.exe', 'hlvis_x64.exe' and 'hlrad_x64.exe'.
   The main benefit of the 64-bit version is no memory allocation failures, because the 64-bit tools have access to more than 2GB of system memory.
 
 2. Open Hammer's configuration dialog.
