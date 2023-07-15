@@ -2,6 +2,9 @@
 ## About
 MHLT is based on Vluzacn's ZHLT v34 (2015/8/17), Vluzacn's (email: vluzacn@163.com) 34th custom build of ZHLT 3.4 (http://zhlt.info/)
 
+## Building
+Read [Building MHLT](https://github.com/fel1x-developer/MHLT/wiki/Building-MHLT)
+
 ## How to install 
 
 1. Open Hammer or Batch Compiler's configuration dialog.
