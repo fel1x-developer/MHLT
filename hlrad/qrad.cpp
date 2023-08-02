@@ -281,7 +281,7 @@ void GetParamsFromEnt(entity_t* mapent)
 	if (iTmp > g_max_map_lightdata)				  //--vluzacn
 	{
 		g_max_map_lightdata = iTmp;
-		sprintf_s(szTmp, "%i", g_max_map_lightdata);
+		snprintf(szTmp, sizeof(szTmp), "%i", g_max_map_lightdata);
 		Log("%30s [ %-9s ]\n", "Lighting Data Memory", szTmp);
 	}
 
@@ -2175,7 +2175,7 @@ static void LoadOpaqueEntities()
 	{
 		dmodel_t* model = &g_dmodels[modelnum];
 		char stringmodel[16];
-		sprintf(stringmodel, "*%i", modelnum);
+		snprintf(stringmodel, sizeof(stringmodel), "*%i", modelnum);
 		for (entnum = 0; entnum < g_numentities; entnum++)
 		{
 			entity_t* ent = &g_entities[entnum];
@@ -3741,7 +3741,7 @@ static void BounceLight()
 
 		if (g_dumppatches)
 		{
-			sprintf(name, "bounce%u.txt", i);
+			snprintf(name, sizeof(name), "bounce%u.txt", i);
 			WriteWorld(name);
 		}
 	}
@@ -3949,7 +3949,7 @@ static void RadWorld()
 	if (g_drawpatch)
 	{
 		char name[_MAX_PATH + 20];
-		sprintf(name, "%s_patch.pts", g_Mapname);
+		snprintf(name, sizeof(name), "%s_patch.pts", g_Mapname);
 		Log("Writing '%s' ...\n", name);
 		FILE* f;
 		f = fopen(name, "w");
@@ -3982,7 +3982,7 @@ static void RadWorld()
 	if (g_drawedge)
 	{
 		char name[_MAX_PATH + 20];
-		sprintf(name, "%s_edge.pts", g_Mapname);
+		snprintf(name, sizeof(name), "%s_edge.pts", g_Mapname);
 		Log("Writing '%s' ...\n", name);
 		FILE* f;
 		f = fopen(name, "w");
@@ -4592,11 +4592,11 @@ static void Settings()
 	Log("minimum final light  [ %17d ] [ %17d ]\n", (int)g_minlight, (int)DEFAULT_MINLIGHT);
 #endif
 #ifdef HLRAD_TRANSFERDATA_COMPRESS
-	sprintf(buf1, "%d (%s)", g_transfer_compress_type, float_type_string[g_transfer_compress_type]);
-	sprintf(buf2, "%d (%s)", DEFAULT_TRANSFER_COMPRESS_TYPE, float_type_string[DEFAULT_TRANSFER_COMPRESS_TYPE]);
+	snprintf(buf1, sizeof(buf1),"%d (%s)", g_transfer_compress_type, float_type_string[g_transfer_compress_type]);
+	snprintf(buf2, sizeof(buf2), "%d (%s)", DEFAULT_TRANSFER_COMPRESS_TYPE, float_type_string[DEFAULT_TRANSFER_COMPRESS_TYPE]);
 	Log("size of transfer     [ %17s ] [ %17s ]\n", buf1, buf2);
-	sprintf(buf1, "%d (%s)", g_rgbtransfer_compress_type, vector_type_string[g_rgbtransfer_compress_type]);
-	sprintf(buf2, "%d (%s)", DEFAULT_RGBTRANSFER_COMPRESS_TYPE, vector_type_string[DEFAULT_RGBTRANSFER_COMPRESS_TYPE]);
+	snprintf(buf1, sizeof(buf1), "%d (%s)", g_rgbtransfer_compress_type, vector_type_string[g_rgbtransfer_compress_type]);
+	snprintf(buf2, sizeof(buf2), "%d (%s)", DEFAULT_RGBTRANSFER_COMPRESS_TYPE, vector_type_string[DEFAULT_RGBTRANSFER_COMPRESS_TYPE]);
 	Log("size of rgbtransfer  [ %17s ] [ %17s ]\n", buf1, buf2);
 #endif
 #ifdef HLRAD_SOFTSKY
