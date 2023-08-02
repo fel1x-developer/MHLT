@@ -159,7 +159,7 @@ void GetParamsFromEnt(entity_t* mapent)
 	{
 		g_max_map_miptex = iTmp;
 	}
-	sprintf_s(szTmp, "%i", g_max_map_miptex);
+	snprintf(szTmp, sizeof(szTmp), "%i", g_max_map_miptex);
 	Log("%30s [ %-9s ]\n", "Texture Data Memory", szTmp);
 
 	// hullfile(string) : "Custom Hullfile"
@@ -1192,7 +1192,7 @@ static void CSGBrush(int brushnum)
 #endif
 					if (b1->contents > b2->contents
 #ifdef HLCSG_HLBSP_SOLIDHINT
-						|| b1->contents == b2->contents && !strncasecmp(GetTextureByNumber_CSG(f->texinfo), "SOLIDHINT", 9)
+						|| (b1->contents == b2->contents && !strncasecmp(GetTextureByNumber_CSG(f->texinfo), "SOLIDHINT", 9))
 #endif
 					)
 					{ // inside a water brush
@@ -1652,7 +1652,7 @@ static void CheckForNoClip()
 
 		ent = &g_entities[i];
 
-		strcpy_s(entclassname, ValueForKey(ent, "classname"));
+		strcpy(entclassname, ValueForKey(ent, "classname"));
 		spawnflags = atoi(ValueForKey(ent, "spawnflags"));
 		int skin = IntForKey(ent, "skin"); // vluzacn
 
@@ -1666,10 +1666,12 @@ static void CheckForNoClip()
 		else
 #endif
 			if ((skin != -16) &&
-				(!strcmp(entclassname, "env_bubbles") || !strcmp(entclassname, "func_illusionary") || (spawnflags & 8) && (/* NOTE: func_doors as far as i can tell may need clipnodes for their
-																																   player collision detection, so for now, they stay out of it. */
-																															  !strcmp(entclassname, "func_train") || !strcmp(entclassname, "func_door") || !strcmp(entclassname, "func_water") || !strcmp(entclassname, "func_door_rotating") || !strcmp(entclassname, "func_pendulum") || !strcmp(entclassname, "func_train") || !strcmp(entclassname, "func_tracktrain") || !strcmp(entclassname, "func_vehicle")) ||
-					(skin != 0) && (!strcmp(entclassname, "func_door") || !strcmp(entclassname, "func_water")) || (spawnflags & 2) && (!strcmp(entclassname, "func_conveyor")) || (spawnflags & 1) && (!strcmp(entclassname, "func_rot_button")) || (spawnflags & 64) && (!strcmp(entclassname, "func_rotating"))))
+				(!strcmp(entclassname, "env_bubbles") || !strcmp(entclassname, "func_illusionary") || /* NOTE: func_doors as far as i can tell may need clipnodes for their player collision detection, so for now, they stay out of it. */
+                ((spawnflags & 8) && ((!strcmp(entclassname, "func_train")) || !strcmp(entclassname, "func_door") ||
+                !strcmp(entclassname, "func_water") || !strcmp(entclassname, "func_door_rotating") || !strcmp(entclassname, "func_pendulum") ||
+                !strcmp(entclassname, "func_train") || !strcmp(entclassname, "func_tracktrain") || !strcmp(entclassname, "func_vehicle"))) ||
+                ((skin != 0) && (!strcmp(entclassname, "func_door") || !strcmp(entclassname, "func_water"))) || ((spawnflags & 2) && (!strcmp(entclassname, "func_conveyor"))) ||
+                ((spawnflags & 1) && (!strcmp(entclassname, "func_rot_button"))) || ((spawnflags & 64) && (!strcmp(entclassname, "func_rotating")))))
 		{
 			MarkEntForNoclip(ent);
 #ifdef HLCSG_CUSTOMHULL

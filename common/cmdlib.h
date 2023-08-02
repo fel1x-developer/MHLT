@@ -591,10 +591,6 @@
 #endif
 //=====================================================================
 
-#if _MSC_VER < 1400
-#define strcpy_s strcpy	  //--vluzacn
-#define sprintf_s sprintf //--vluzacn
-#endif
 #if _MSC_VER >= 1400
 #pragma warning(disable : 4996)
 #endif
