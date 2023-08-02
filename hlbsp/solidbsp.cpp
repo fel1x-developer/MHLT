@@ -1740,7 +1740,7 @@ static void LinkLeafFaces(surface_t* planelist, node_t* leafnode)
 #endif
 		for (f = surf->faces; f; f = f->next)
 		{
-			if ((f->contents == CONTENTS_HINT))
+			if (f->contents == CONTENTS_HINT)
 			{
 				f->contents = CONTENTS_EMPTY;
 			}

@@ -885,7 +885,7 @@ void FinishBSPFile()
 				for (int j = 0; j < g_nummiptex; j++)
 				{
 					int lumpsize = l->dataofs[j] - l->dataofs[i];
-					if (l->dataofs[j] == -1 || lumpsize < 0 || lumpsize == 0 && j <= i)
+					if (l->dataofs[j] == -1 || lumpsize < 0 || (lumpsize == 0 && j <= i))
 						continue;
 					if (lumpsize < lumpsizes[i])
 						lumpsizes[i] = lumpsize;

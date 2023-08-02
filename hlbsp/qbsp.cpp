@@ -1752,13 +1752,13 @@ static void ProcessFile(const char* const filename)
 	for (i = 0; i < NUM_HULLS; i++)
 	{
 		// mapname.p[0-3]
-		sprintf(name, "%s.p%i", filename, i);
+		snprintf(name, sizeof(name), "%s.p%i", filename, i);
 		polyfiles[i] = fopen(name, "r");
 
 		if (!polyfiles[i])
 			Error("Can't open %s", name);
 #ifdef ZHLT_DETAILBRUSH
-		sprintf(name, "%s.b%i", filename, i);
+		snprintf(name, sizeof(name), "%s.b%i", filename, i);
 		brushfiles[i] = fopen(name, "r");
 		if (!brushfiles[i])
 			Error("Can't open %s", name);
@@ -1851,12 +1851,12 @@ static void ProcessFile(const char* const filename)
 	// Because the bsp file has been updated, these polyfiles are no longer valid.
 	for (i = 0; i < NUM_HULLS; i++)
 	{
-		sprintf(name, "%s.p%i", filename, i);
+		snprintf(name, sizeof(name), "%s.p%i", filename, i);
 		fclose(polyfiles[i]);
 		polyfiles[i] = NULL;
 		unlink(name);
 #ifdef ZHLT_DETAILBRUSH
-		sprintf(name, "%s.b%i", filename, i);
+		snprintf(name, sizeof(name), "%s.b%i", filename, i);
 		fclose(brushfiles[i]);
 		brushfiles[i] = NULL;
 		unlink(name);

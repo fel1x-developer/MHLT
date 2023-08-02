@@ -140,8 +140,8 @@ void parsecommand(execute_t& e, char* cmdline, char* words, unsigned int n)
 		e.stack++;
 		if (!e.skip)
 		{
-			if (t == IFDEF && findparams(cmdline, pnext(words)) ||
-				t == IFNDEF && !findparams(cmdline, pnext(words)))
+			if ((t == IFDEF && findparams(cmdline, pnext(words))) ||
+				(t == IFNDEF && !findparams(cmdline, pnext(words))))
 				e.skip = false;
 			else
 			{
@@ -202,11 +202,12 @@ const char* nextword(const char* s, char* token, unsigned int n)
 			content = true;
 		if (!quote && !comment && content && (c[0] == '\n' || isspace(c[0])))
 			break;
-		if (content && c[0] != '\"')
-			if (i < n - 1)
-				token[i++] = c[0];
-			else
-				error = true;
+		if (content && c[0] != '\"') {
+            if (i < n - 1)
+                token[i++] = c[0];
+            else
+                error = true;
+        }
 	}
 	token[i] = '\0';
 	return content ? c : NULL;
