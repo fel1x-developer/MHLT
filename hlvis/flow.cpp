@@ -1459,7 +1459,7 @@ vec_t WindingDist(const winding_t* w[2])
 			vec3_t delta;
 			vec_t frac;
 			vec3_t v;
-			if (dist1 > ON_EPSILON && dist2 < -ON_EPSILON || dist1 < -ON_EPSILON && dist2 > ON_EPSILON)
+			if ((dist1 > ON_EPSILON && dist2 < -ON_EPSILON) || (dist1 < -ON_EPSILON && dist2 > ON_EPSILON))
 			{
 				frac = dist1 / (dist1 - dist2);
 				VectorSubtract(p2, p1, delta);
